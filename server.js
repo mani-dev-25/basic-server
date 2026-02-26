@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, "public")));
-mongoose.connect("mongodb://127.0.0.1:27017/onlineShop")
+mongoose.connect("mongodb+srv://mani12345qwert_db_user:MtVxOTHg8LXwgNkf@cluster0.ougkmla.mongodb.net/?appName=Cluster0")
 .then(()=>console.log("mongoDb is connected successfully"))
 .catch(err=>console.error("error",err))
 
