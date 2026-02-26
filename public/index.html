@@ -3,7 +3,7 @@
 
 <head>
     <title>online shopping</title>
-    <link rel="icon" href="E:\clg backend\Express\experiment\online_shopping\logo.png">
+    <link rel="icon" href="logo.png">
 </head>
 
 <body>
@@ -11,7 +11,7 @@
     <hr>
     <h2><u>Admin panel</u></h2>
     <h2>Insert data</h2>
-    <form method="post" action="http://localhost:3000/api/items">
+    <form method="post" action="/api/items">
         <input type="number" name="itemId" placeholder="enter item id" required><br>
         <input type="text" name="itemName" placeholder="enter item name" required><br>
         <input type="number" name="price" placeholder="enter price" required><br>
@@ -19,7 +19,7 @@
         <button type="submit">Submit</button>
     </form>
     <h2>Read data</h2>
-    <button><a href="http://localhost:3000/api/items">view data</a></button>
+    <button><a href="/api/items">view data</a></button>
     <h2>update item</h2>
     <form id="updateData">
         <input type="number" id="itemId" name="itemId" placeholder="enter item id" required><br>
@@ -42,7 +42,7 @@
         const price = document.getElementById("price").value
         const available = document.getElementById("available").value
 
-        const response = await fetch(`http://localhost:3000/api/items/${itemId}`, {
+        const response = await fetch(`/api/items/${itemId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -60,7 +60,7 @@
     document.getElementById("deleteData").addEventListener("submit", async function (e) {
         e.preventDefault()
         const itemId = document.getElementById("deleteItemId").value
-        const response = await fetch(`http://localhost:3000/api/items/${itemId}`, {
+        const response = await fetch(`/api/items/${itemId}`, {
             method: "DELETE"
         })
         const data =await response.text()
